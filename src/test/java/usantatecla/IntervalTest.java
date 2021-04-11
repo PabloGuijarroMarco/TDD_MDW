@@ -11,12 +11,14 @@ public class IntervalTest {
   private Point left = new Point(-2.2);
   private Point right = new Point(4.4);
   private IntervalBuilder intervalBuilder;
+  private IntervalBuilder intervalBuilder2;
 
   @BeforeEach
   public void before(){
     this.left = new Point(-2.2);
     this.right = new Point(4.4);
     this.intervalBuilder = new IntervalBuilder();
+    this.intervalBuilder2 = new IntervalBuilder();
   }
 
   @Test
@@ -69,7 +71,7 @@ public class IntervalTest {
   @Test
   public void givenTwoIntervalsOpenOpenWhenIntersectionThenFalse() {
     Interval firstInterval = this.intervalBuilder.open(left.getEquals()).open(left.getGreater()).build();
-    Interval secondInterval = this.intervalBuilder.open(right.getEquals()).open(right.getGreater()).build();
+    Interval secondInterval = this.intervalBuilder2.open(right.getEquals()).open(right.getGreater()).build();
     assertFalse(firstInterval.intersects(secondInterval));
   }
 
