@@ -73,6 +73,8 @@ public class IntervalTest {
     Interval firstInterval = this.intervalBuilder.open(left.getEquals()).open(left.getGreater()).build();
     Interval secondInterval = this.intervalBuilder2.open(right.getEquals()).open(right.getGreater()).build();
     assertFalse(firstInterval.intersects(secondInterval));
+    secondInterval = this.intervalBuilder2.open(left.getGreater()).open(right.getGreater()).build();
+    assertFalse(firstInterval.intersects(secondInterval));
   }
 
 }
