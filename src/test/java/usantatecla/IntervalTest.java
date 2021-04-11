@@ -101,6 +101,9 @@ public class IntervalTest {
     Interval firstInterval = new IntervalBuilder().closed(left.getEquals()).closed(left.getGreater()).build();
     Interval secondInterval = new IntervalBuilder().closed(left.getGreater()).closed(right.getGreater()).build();
     assertTrue(firstInterval.intersects(secondInterval));
+    firstInterval = new IntervalBuilder().closed(left.getEquals()).closed(right.getEquals()).build();
+    secondInterval = new IntervalBuilder().closed(left.getGreater()).closed(right.getGreater()).build();
+    assertTrue(firstInterval.intersects(secondInterval));
   }
 
 }
